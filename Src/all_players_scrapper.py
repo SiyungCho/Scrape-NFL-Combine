@@ -10,7 +10,6 @@ NFL_url = 'https://nflcombineresults.com/nflcombinedata.php?'
 
 driver = webdriver.Chrome(service=path)
 driver.get(NFL_url)
-print(NFL_url)
 
 headers = driver.find_elements(By.TAG_NAME, "thead")
 for element in headers:
