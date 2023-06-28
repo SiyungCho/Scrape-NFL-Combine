@@ -10,7 +10,6 @@ path = Service("C:\\Users\\siyun\\Downloads\\chromedriver_win32\\chromedriver.ex
 for year in range(1987, 2024):
     
     NFL_url = 'https://nflcombineresults.com/nflcombinedata.php?year={yrs}&pos=&college='.format(yrs=year)
-
     driver = webdriver.Chrome(service=path)
     driver.get(NFL_url)
 
