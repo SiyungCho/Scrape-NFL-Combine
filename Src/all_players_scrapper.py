@@ -15,7 +15,6 @@ for year in range(1987, 2024):
     for element in data:
         text = element.text
 
-    all_values = text.split("\n")
-    print(all_values)
-
-driver.quit()
+    all_players = text.split("\n")
+    print(all_players)
+    driver.quit()
