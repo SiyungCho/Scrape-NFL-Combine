@@ -1,11 +1,10 @@
-#C:\Users\siyun\Downloads\WebScrappingBets\.venv\Scripts\python.exe
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
 path = Service("C:\\Users\\siyun\\Downloads\\chromedriver_win32\\chromedriver.exe")
 
-for year in range(1987, 2024):
+for year in range(2022, 2024):
     
     NFL_url = 'https://nflcombineresults.com/nflcombinedata.php?year={yrs}&pos=&college='.format(yrs=year)
     driver = webdriver.Chrome(service=path)
@@ -16,6 +15,9 @@ for year in range(1987, 2024):
         text = element.text
 
     all_values = text.split("\n")
-    print(all_values)
+    #print(all_values)
+
+for x in range(0, 10):
+    print(all_values[x])
 
 driver.quit()
