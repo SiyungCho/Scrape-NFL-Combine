@@ -15,6 +15,6 @@ for element in headers:
 
 col_names = text.split("\n")
 col_names = col_names[:-1] + col_names[-1].split(' ')
-col_names.remove('Wonderlic')
+#col_names.remove('Wonderlic')
 
 driver.quit()
