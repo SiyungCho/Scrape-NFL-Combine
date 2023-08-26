@@ -10,8 +10,11 @@ for year in range(1987, 2023):
     driver = webdriver.Chrome(service=path)
     driver.get(NFL_url)
 
-    data = driver.find_elements(By.TAG_NAME, "tbody")
-    for element in data:
-        text = element.text
-    all_pro_players.append(text.split("\n"))
+    table = driver.find_element(By.ID, 'pro_bowl')
+    rows = table.find_elements(By.TAG_NAME, 'tr')
+
+    for row in rows[1:]:  # Skip the header row
+        cols = row.find_elements(By.TAG_NAME, 'td')
+        player_data = [col.text if col.text.strip() != '' else '0' for col in cols]
+        all_pro_players.append(player_data)
     driver.quit()
