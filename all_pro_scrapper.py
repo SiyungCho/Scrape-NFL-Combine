@@ -16,5 +16,6 @@ for year in range(1987, 2023):
     for row in rows[1:]:  # Skip the header row
         cols = row.find_elements(By.TAG_NAME, 'td')
         player_data = [col.text if col.text.strip() != '' else '0' for col in cols]
+        player_data.append(year)
         all_pro_players.append(player_data)
     driver.quit()
