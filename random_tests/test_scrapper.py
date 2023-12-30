@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import pandas as pd
 
-from scrape_headers import col_names
+from Data_collection.scrape_headers import col_names
 
 path = Service("C:\\Users\\siyun\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe")
 """
@@ -36,7 +36,7 @@ driver.quit()
 #        print(all_values[x][y])
 #print(all_values)
 
-all_pro_players = []
+"""all_pro_players = []
 for year in range(1987, 1989):
 
     NFL_url ='https://www.pro-football-reference.com/years/{yrs}/probowl.htm'.format(yrs=year)
@@ -51,7 +51,7 @@ for year in range(1987, 1989):
         player_data = [col.text if col.text.strip() != '' else '0' for col in cols]
         all_pro_players.append(player_data)
     driver.quit()
-print(all_pro_players)
+print(all_pro_players)"""
 """
 data_table = []
 for year in range(1987, 2024):
@@ -71,7 +71,7 @@ for year in range(1987, 2024):
 """   
 
 all_pro_players = []
-for year in range(1987, 2023):
+for year in range(1987, 1989):
 
     NFL_url ='https://www.pro-football-reference.com/years/{yrs}/probowl.htm'.format(yrs=year)
     driver = webdriver.Chrome(service=path)
